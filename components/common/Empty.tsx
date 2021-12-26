@@ -3,11 +3,12 @@ import {View, Text, StyleSheet} from 'react-native';
 
 export interface EmptyProps {
   text: string;
+  background?: string;
 }
 
-const Empty = ({text}: EmptyProps) => {
+const Empty = ({text, background = '#F7A630'}: EmptyProps) => {
   return (
-    <View style={styles.block}>
+    <View style={[styles.block, {backgroundColor: background}]}>
       <Text>{text}</Text>
     </View>
   );
