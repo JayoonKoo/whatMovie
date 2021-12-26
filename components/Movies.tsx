@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActivityIndicator, FlatList, StyleSheet, View} from 'react-native';
+import {ActivityIndicator, FlatList, StyleSheet} from 'react-native';
 import {MovieSearch} from '../api/types';
 import MovieItem from './MovieItem';
 
@@ -10,18 +10,15 @@ export interface MoviesProps {
 }
 
 const Movies = ({fetchNextPage, isFetchingNextPage, movies}: MoviesProps) => {
-  console.log(movies);
-
   return (
     <FlatList
+      numColumns={3}
       data={movies}
       renderItem={({item}) => <MovieItem movie={item} />}
       keyExtractor={item => item.imdbID}
       style={styles.list}
-      ItemSeparatorComponent={() => <View style={styles.separator} />}
       ListFooterComponent={() => (
         <>
-          {movies.length > 0 ? <View style={styles.separator} /> : null}
           {isFetchingNextPage && (
             <ActivityIndicator
               size="small"
@@ -40,14 +37,9 @@ const Movies = ({fetchNextPage, isFetchingNextPage, movies}: MoviesProps) => {
 const styles = StyleSheet.create({
   list: {
     flex: 1,
-  },
-  separator: {
-    width: '100%',
-    height: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#F7A630',
   },
   spinner: {
-    backgroundColor: 'white',
     paddingTop: 32,
     paddingBottom: 32,
   },
