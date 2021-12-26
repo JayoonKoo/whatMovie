@@ -16,7 +16,7 @@ const MoviesScreen = () => {
 
   const {data, isFetchingNextPage, fetchNextPage} = useInfiniteQuery(
     ['movies', search],
-    ({pageParam}) => getMovies({s: search, page: pageParam}),
+    ({pageParam}) => getMovies({s: search, page: pageParam?.page}),
     {
       getNextPageParam: (lastPage, allPages) => {
         if (!lastPage) return;
