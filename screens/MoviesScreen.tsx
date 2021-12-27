@@ -20,7 +20,7 @@ const MoviesScreen = () => {
     {
       getNextPageParam: (lastPage, allPages) => {
         if (!lastPage) return;
-        return lastPage.Search.length === 10
+        return Number(lastPage.totalResults) > allPages.length * 10
           ? {page: allPages.length + 1}
           : undefined;
       },
