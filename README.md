@@ -34,6 +34,6 @@
 - `React Query` 를 활용한 `Server State` 관리
 
 ### 앞으로
-- `Bottom Tab` 이나 `Draw Tab` 등 복작한 화면을 가지는 앱 만들어 보기 
+- `Bottom Tab` 이나 `Draw Tab` 등 복잡한 화면을 가지는 앱 만들어 보기 
 - `Styled Component`를 적용한 `React Native` 앱 만들어 보기
 - `Native` 컴포넌트를 가져와서 `React Native`에 `Component`로 만들어 보기 
