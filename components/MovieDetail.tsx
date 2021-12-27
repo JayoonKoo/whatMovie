@@ -9,8 +9,6 @@ export interface MovieDetailProps {
 }
 
 const MovieDetail = ({movie}: MovieDetailProps) => {
-  console.log(JSON.stringify(movie, null, 2));
-
   return (
     <ScrollView style={styles.block}>
       <View style={styles.block}>
