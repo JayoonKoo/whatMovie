@@ -1,18 +1,20 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Image, Pressable, Platform} from 'react-native';
 import {MovieSearch} from '../api/types';
+import {RootStackNavagationProp} from '../screens/types';
+import {isPosterUrl} from '../utils/poster';
 import NoPoster from './NoPoster';
 
 export interface MovieItemProps {
   movie: MovieSearch;
 }
 
-const isPosterUrl = (url: string) => {
-  return url !== 'N/A';
-};
-
 const MovieItem = ({movie}: MovieItemProps) => {
-  const onPress = () => {};
+  const navagation = useNavigation<RootStackNavagationProp>();
+  const onPress = () => {
+    navagation.navigate('Movie', {movieId: movie.imdbID});
+  };
   return (
     <Pressable
       onPress={onPress}
